@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="layout::header">
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+</head>
+<body>
+<nav th:replace ="layout::sharednav"></nav>
+<div class="d-flex justify-content-center align-items-center container custom-style">
+    <div class="row ">
+
+        <form action="/logincandidate" th:object="${candidate}">
+
+            <div class="form-group">
+                <label for="inputUserName" class="control-label">First Time Here ? <a href="/register">create new account</a></label>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputUserName" class="control-label">Enter User Id</label>
+                <input type="input" class="form-control" id="inputUserName" aria-labelledby="emailnotification" name = "userName" th:field="*{userName}">
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="control-label">Enter Password</label>
+                <input type="password" class="form-control" id="inputPassword" aria-labelledby="passwordnotification" name = "password" th:field="*{password}">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <div class="form-group">
+                <label for="inputUserName" class="control-label google-stype">Or Sign in with google account ? <a href="/register">Google</a></label>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
